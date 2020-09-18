@@ -14,7 +14,7 @@ reagent.impl.batching.fake_raf = (function reagent$impl$batching$fake_raf(f){
 return setTimeout(f,(16));
 });
 reagent.impl.batching.next_tick = (((!(reagent.impl.util.is_client)))?reagent.impl.batching.fake_raf:(function (){var w = window;
-var or__4126__auto__ = w.requestAnimationFrame;
+return (function (){var or__4126__auto__ = w.requestAnimationFrame;
 if(cljs.core.truth_(or__4126__auto__)){
 return or__4126__auto__;
 } else {
@@ -35,6 +35,7 @@ return reagent.impl.batching.fake_raf;
 }
 }
 }
+})().bind(w);
 })());
 reagent.impl.batching.compare_mount_order = (function reagent$impl$batching$compare_mount_order(c1,c2){
 return (c1.cljsMountOrder - c2.cljsMountOrder);
@@ -46,14 +47,14 @@ var n__4613__auto__ = a.length;
 var i = (0);
 while(true){
 if((i < n__4613__auto__)){
-var c_11800 = (a[i]);
-if(c_11800.cljsIsDirty === true){
-c_11800.forceUpdate();
+var c_10240 = (a[i]);
+if(c_10240.cljsIsDirty === true){
+c_10240.forceUpdate();
 } else {
 }
 
-var G__11801 = (i + (1));
-i = G__11801;
+var G__10241 = (i + (1));
+i = G__10241;
 continue;
 } else {
 return null;
@@ -74,8 +75,8 @@ while(true){
 if((i < n__4613__auto__)){
 (fs[i]).call(null);
 
-var G__11802 = (i + (1));
-i = G__11802;
+var G__10242 = (i + (1));
+i = G__10242;
 continue;
 } else {
 return null;

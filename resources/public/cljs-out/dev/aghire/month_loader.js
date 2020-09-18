@@ -70,23 +70,23 @@ aghire.month_loader.month_load_fini = (function aghire$month_loader$month_load_f
 return cljs.core._EQ_.call(null,new cljs.core.Keyword(null,"fini","fini",-375236100),cljs.core.deref.call(null,aghire.month_loader.month_phase));
 });
 aghire.month_loader.month_progress_compute = (function aghire$month_loader$month_progress_compute(){
-var map__15629 = new cljs.core.Keyword(null,"month-load","month-load",-1463045711).cljs$core$IFn$_invoke$arity$1(cljs.core.deref.call(null,aghire.db.app));
-var map__15629__$1 = (((((!((map__15629 == null))))?(((((map__15629.cljs$lang$protocol_mask$partition0$ & (64))) || ((cljs.core.PROTOCOL_SENTINEL === map__15629.cljs$core$ISeq$))))?true:false):false))?cljs.core.apply.call(null,cljs.core.hash_map,map__15629):map__15629);
-var phase = cljs.core.get.call(null,map__15629__$1,new cljs.core.Keyword(null,"phase","phase",575722892));
-var page_url_count = cljs.core.get.call(null,map__15629__$1,new cljs.core.Keyword(null,"page-url-count","page-url-count",1369115726));
-var page_urls_remaining = cljs.core.get.call(null,map__15629__$1,new cljs.core.Keyword(null,"page-urls-remaining","page-urls-remaining",758945536));
-var athings = cljs.core.get.call(null,map__15629__$1,new cljs.core.Keyword(null,"athings","athings",-336004304));
-var athing_parse_ct = cljs.core.get.call(null,map__15629__$1,new cljs.core.Keyword(null,"athing-parse-ct","athing-parse-ct",192542242));
-var jobs = cljs.core.get.call(null,map__15629__$1,new cljs.core.Keyword(null,"jobs","jobs",-313607120));
+var map__17501 = new cljs.core.Keyword(null,"month-load","month-load",-1463045711).cljs$core$IFn$_invoke$arity$1(cljs.core.deref.call(null,aghire.db.app));
+var map__17501__$1 = (((((!((map__17501 == null))))?(((((map__17501.cljs$lang$protocol_mask$partition0$ & (64))) || ((cljs.core.PROTOCOL_SENTINEL === map__17501.cljs$core$ISeq$))))?true:false):false))?cljs.core.apply.call(null,cljs.core.hash_map,map__17501):map__17501);
+var phase = cljs.core.get.call(null,map__17501__$1,new cljs.core.Keyword(null,"phase","phase",575722892));
+var page_url_count = cljs.core.get.call(null,map__17501__$1,new cljs.core.Keyword(null,"page-url-count","page-url-count",1369115726));
+var page_urls_remaining = cljs.core.get.call(null,map__17501__$1,new cljs.core.Keyword(null,"page-urls-remaining","page-urls-remaining",758945536));
+var athings = cljs.core.get.call(null,map__17501__$1,new cljs.core.Keyword(null,"athings","athings",-336004304));
+var athing_parse_ct = cljs.core.get.call(null,map__17501__$1,new cljs.core.Keyword(null,"athing-parse-ct","athing-parse-ct",192542242));
+var jobs = cljs.core.get.call(null,map__17501__$1,new cljs.core.Keyword(null,"jobs","jobs",-313607120));
 return cljs.core.into.call(null,new cljs.core.PersistentVector(null, 1, 5, cljs.core.PersistentVector.EMPTY_NODE, [(function (){var or__4126__auto__ = phase;
 if(cljs.core.truth_(or__4126__auto__)){
 return or__4126__auto__;
 } else {
 return new cljs.core.Keyword(null,"inactive","inactive",-306247616);
 }
-})()], null),(function (){var G__15631 = phase;
-var G__15631__$1 = (((G__15631 instanceof cljs.core.Keyword))?G__15631.fqn:null);
-switch (G__15631__$1) {
+})()], null),(function (){var G__17503 = phase;
+var G__17503__$1 = (((G__17503 instanceof cljs.core.Keyword))?G__17503.fqn:null);
+switch (G__17503__$1) {
 case "cull-athings":
 return new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [page_url_count,(page_url_count - cljs.core.count.call(null,page_urls_remaining))], null);
 
@@ -165,9 +165,9 @@ return (function (task){
 var temp__5720__auto__ = cljs.core.first.call(null,new cljs.core.Keyword(null,"page-urls-remaining","page-urls-remaining",758945536).cljs$core$IFn$_invoke$arity$1(task));
 if(cljs.core.truth_(temp__5720__auto__)){
 var pg_1 = temp__5720__auto__;
-return new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.Keyword(null,"iframe","iframe",884422026),new cljs.core.PersistentArrayMap(null, 2, [new cljs.core.Keyword(null,"src","src",-1651076051),pg_1,new cljs.core.Keyword(null,"on-load","on-load",1415151594),(function (p1__15633_SHARP_){
+return new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.Keyword(null,"iframe","iframe",884422026),new cljs.core.PersistentArrayMap(null, 2, [new cljs.core.Keyword(null,"src","src",-1651076051),pg_1,new cljs.core.Keyword(null,"on-load","on-load",1415151594),(function (p1__17505_SHARP_){
 var rem_pages = cljs.core.rest.call(null,new cljs.core.Keyword(null,"page-urls-remaining","page-urls-remaining",758945536).cljs$core$IFn$_invoke$arity$1(task));
-return cljs.core.reset_BANG_.call(null,aghire.month_loader.month_load,cljs.core.merge.call(null,task,new cljs.core.PersistentArrayMap(null, 3, [new cljs.core.Keyword(null,"athings","athings",-336004304),cljs.core.into.call(null,new cljs.core.Keyword(null,"athings","athings",-336004304).cljs$core$IFn$_invoke$arity$1(task),aghire.month_loader.job_page_athings.call(null,p1__15633_SHARP_.target)),new cljs.core.Keyword(null,"page-urls-remaining","page-urls-remaining",758945536),rem_pages,new cljs.core.Keyword(null,"phase","phase",575722892),((cljs.core.empty_QMARK_.call(null,rem_pages))?new cljs.core.Keyword(null,"parse-jobs","parse-jobs",-962878575):new cljs.core.Keyword(null,"phase","phase",575722892).cljs$core$IFn$_invoke$arity$1(task))], null)));
+return cljs.core.reset_BANG_.call(null,aghire.month_loader.month_load,cljs.core.merge.call(null,task,new cljs.core.PersistentArrayMap(null, 3, [new cljs.core.Keyword(null,"athings","athings",-336004304),cljs.core.into.call(null,new cljs.core.Keyword(null,"athings","athings",-336004304).cljs$core$IFn$_invoke$arity$1(task),aghire.month_loader.job_page_athings.call(null,p1__17505_SHARP_.target)),new cljs.core.Keyword(null,"page-urls-remaining","page-urls-remaining",758945536),rem_pages,new cljs.core.Keyword(null,"phase","phase",575722892),((cljs.core.empty_QMARK_.call(null,rem_pages))?new cljs.core.Keyword(null,"parse-jobs","parse-jobs",-962878575):new cljs.core.Keyword(null,"phase","phase",575722892).cljs$core$IFn$_invoke$arity$1(task))], null)));
 })], null)], null);
 } else {
 return null;
@@ -176,22 +176,22 @@ return null;
 });
 aghire.month_loader.ATHING_CHUNK_SZ = (20);
 aghire.month_loader.cull_jobs_from_athings = (function aghire$month_loader$cull_jobs_from_athings(){
-var map__15636 = cljs.core.deref.call(null,aghire.month_loader.month_load);
-var map__15636__$1 = (((((!((map__15636 == null))))?(((((map__15636.cljs$lang$protocol_mask$partition0$ & (64))) || ((cljs.core.PROTOCOL_SENTINEL === map__15636.cljs$core$ISeq$))))?true:false):false))?cljs.core.apply.call(null,cljs.core.hash_map,map__15636):map__15636);
-var task = map__15636__$1;
-var phase = cljs.core.get.call(null,map__15636__$1,new cljs.core.Keyword(null,"phase","phase",575722892));
-var athings = cljs.core.get.call(null,map__15636__$1,new cljs.core.Keyword(null,"athings","athings",-336004304));
-var athing_parse_ct = cljs.core.get.call(null,map__15636__$1,new cljs.core.Keyword(null,"athing-parse-ct","athing-parse-ct",192542242));
-var jobs = cljs.core.get.call(null,map__15636__$1,new cljs.core.Keyword(null,"jobs","jobs",-313607120));
-var jobs_seen = cljs.core.get.call(null,map__15636__$1,new cljs.core.Keyword(null,"jobs-seen","jobs-seen",-1549674159));
+var map__17508 = cljs.core.deref.call(null,aghire.month_loader.month_load);
+var map__17508__$1 = (((((!((map__17508 == null))))?(((((map__17508.cljs$lang$protocol_mask$partition0$ & (64))) || ((cljs.core.PROTOCOL_SENTINEL === map__17508.cljs$core$ISeq$))))?true:false):false))?cljs.core.apply.call(null,cljs.core.hash_map,map__17508):map__17508);
+var task = map__17508__$1;
+var phase = cljs.core.get.call(null,map__17508__$1,new cljs.core.Keyword(null,"phase","phase",575722892));
+var athings = cljs.core.get.call(null,map__17508__$1,new cljs.core.Keyword(null,"athings","athings",-336004304));
+var athing_parse_ct = cljs.core.get.call(null,map__17508__$1,new cljs.core.Keyword(null,"athing-parse-ct","athing-parse-ct",192542242));
+var jobs = cljs.core.get.call(null,map__17508__$1,new cljs.core.Keyword(null,"jobs","jobs",-313607120));
+var jobs_seen = cljs.core.get.call(null,map__17508__$1,new cljs.core.Keyword(null,"jobs-seen","jobs-seen",-1549674159));
 if(cljs.core._EQ_.call(null,new cljs.core.Keyword(null,"parse-jobs","parse-jobs",-962878575),phase)){
 var chunk = cljs.core.take.call(null,aghire.month_loader.ATHING_CHUNK_SZ,athings);
 var rem_athings = cljs.core.nthrest.call(null,athings,aghire.month_loader.ATHING_CHUNK_SZ);
 if(cljs.core.seq.call(null,chunk)){
-var new_jobs = cljs.core.filter.call(null,(function (p1__15634_SHARP_){
-return new cljs.core.Keyword(null,"OK","OK",1347916322).cljs$core$IFn$_invoke$arity$1(p1__15634_SHARP_);
-}),cljs.core.map.call(null,(function (p1__15635_SHARP_){
-return aghire.job_parse.job_parse.call(null,p1__15635_SHARP_,jobs_seen);
+var new_jobs = cljs.core.filter.call(null,(function (p1__17506_SHARP_){
+return new cljs.core.Keyword(null,"OK","OK",1347916322).cljs$core$IFn$_invoke$arity$1(p1__17506_SHARP_);
+}),cljs.core.map.call(null,(function (p1__17507_SHARP_){
+return aghire.job_parse.job_parse.call(null,p1__17507_SHARP_,jobs_seen);
 }),chunk));
 return setTimeout((function (){
 return cljs.core.reset_BANG_.call(null,aghire.month_loader.month_load,cljs.core.merge.call(null,task,new cljs.core.PersistentArrayMap(null, 5, [new cljs.core.Keyword(null,"jobs","jobs",-313607120),cljs.core.into.call(null,jobs,new_jobs),new cljs.core.Keyword(null,"jobs-seen","jobs-seen",-1549674159),((cljs.core.seq.call(null,rem_athings))?clojure.set.union.call(null,jobs_seen,cljs.core.into.call(null,cljs.core.PersistentHashSet.EMPTY,cljs.core.map.call(null,new cljs.core.Keyword(null,"hn-id","hn-id",1951773016),new_jobs))):null),new cljs.core.Keyword(null,"athings","athings",-336004304),rem_athings,new cljs.core.Keyword(null,"athing-parse-ct","athing-parse-ct",192542242),(athing_parse_ct + cljs.core.count.call(null,chunk)),new cljs.core.Keyword(null,"phase","phase",575722892),((cljs.core.empty_QMARK_.call(null,rem_athings))?new cljs.core.Keyword(null,"fini","fini",-375236100):phase)], null)));

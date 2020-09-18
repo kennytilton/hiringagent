@@ -53,9 +53,9 @@ var rgx_normal = temp__5720__auto__;
 var or_terms = clojure.string.split.call(null,cljs.core.js__GT_clj.call(null,rgx_normal),/\|\|/);
 return cljs.core.into.call(null,cljs.core.PersistentVector.EMPTY,cljs.core.map.call(null,(function (or_term){
 return cljs.core.into.call(null,cljs.core.PersistentVector.EMPTY,cljs.core.map.call(null,(function (and_term){
-var vec__15742 = clojure.string.split.call(null,clojure.string.trim.call(null,and_term),",");
-var term = cljs.core.nth.call(null,vec__15742,(0),null);
-var options = cljs.core.nth.call(null,vec__15742,(1),null);
+var vec__10989 = clojure.string.split.call(null,clojure.string.trim.call(null,and_term),",");
+var term = cljs.core.nth.call(null,vec__10989,(0),null);
+var options = cljs.core.nth.call(null,vec__10989,(1),null);
 var netopts = ((((cljs.core.not.call(null,cljs.core.deref.call(null,aghire.db.rgx_match_case))) && ((!(clojure.string.includes_QMARK_.call(null,(function (){var or__4126__auto__ = options;
 if(cljs.core.truth_(or__4126__auto__)){
 return or__4126__auto__;
@@ -64,13 +64,13 @@ return "";
 }
 })(),"i"))))))?[cljs.core.str.cljs$core$IFn$_invoke$arity$1(options),"i"].join(''):"");
 try{return (new RegExp(term,netopts));
-}catch (e15745){if((e15745 instanceof Object)){
-var ex = e15745;
+}catch (e10992){if((e10992 instanceof Object)){
+var ex = e10992;
 alert(["Invalid regex: ",cljs.core.str.cljs$core$IFn$_invoke$arity$1(rgx_normal)].join(''));
 
 return null;
 } else {
-throw e15745;
+throw e10992;
 
 }
 }}),clojure.string.split.call(null,or_term,/&&/)));

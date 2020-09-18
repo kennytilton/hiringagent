@@ -17,11 +17,12 @@
   (if-not is-client
     fake-raf
     (let [w js/window]
-      (or (.-requestAnimationFrame w)
-          (.-webkitRequestAnimationFrame w)
-          (.-mozRequestAnimationFrame w)
-          (.-msRequestAnimationFrame w)
-          fake-raf))))
+      (.bind (or (.-requestAnimationFrame w)
+                 (.-webkitRequestAnimationFrame w)
+                 (.-mozRequestAnimationFrame w)
+                 (.-msRequestAnimationFrame w)
+                 fake-raf)
+             w))))
 
 (defn compare-mount-order
   [^clj c1 ^clj c2]

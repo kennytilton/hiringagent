@@ -72,6 +72,7 @@
                                    (some (fn [h] (.match h rx)) hseg))))]
               (swap! spec assoc :OK true)
               (swap! spec assoc :company (nth hseg 0))
+              (swap! spec assoc :title-seg (:title-seg @s))
               (swap! spec assoc :title-search htext)
               (swap! spec assoc :body-search
                 (str/join "*4*2*"

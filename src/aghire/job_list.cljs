@@ -20,10 +20,31 @@
                      :margin-right "9px"
                      :display      "block"}}
       (utl/unesc "&#x2b51")]
-     [:span (:title-search job)]]))
+     (into [:div ]
+       (map (fn [n]
+
+              (case (.-nodeType n)
+                1 (if (= "A" (.-tagName n))
+                    [:a {:href (.-href n)} (.-textContent n)]
+                    [:p (str "Unexpected tagname = " (.-tagName n))])
+                3 [:span (.-textContent n)]
+                [:p (str "Unexpected n type = " (.-nodeType n))]))
+         (:title-seg job)))]))
 
 (defn jump-to-hn [hn-id]
   (.open js/window (pp/cl-format nil "https://news.ycombinator.com/item?id=~a" hn-id) "_blank"))
+
+(defn node-to-hiccup [n]
+    (case (.-nodeType n)
+      1 (case (.-tagName n)
+          "A" [:a {:href (.-href n)} (.-textContent n)] ;; s/b (into [:a href]...
+          "P" (into [:p] (map node-to-hiccup
+                           (array-seq (.-childNodes n))))
+          "DIV" (into [:div] (map node-to-hiccup
+                             (array-seq (.-childNodes n))))
+          [:p (str "Unexpected tag = " (.-tagName n))])
+      3 [:span (.-textContent n)]
+      [:p (str "Unexpected n type = " (.-nodeType n))]))
 
 (defn job-details []
   (fn [job]
@@ -37,12 +58,9 @@
                                       :overflow "auto"}
                     :on-double-click #(jump-to-hn (:hn-id job))}]
          (when deets
-           (map (fn [node]
-                  (case (.-nodeType node)
-                    1 [:p (.-innerHTML node)]
-                    3 [:p (.-textContent node)]
-                    [:p (str "Unexpected node type = " (.-nodeType node))]))
-             (:body job))))])))
+           (map node-to-hiccup
+             (remove (fn [n] (= "reply" (.-className n)))
+               (:body job)))))])))
 
 (defn job-list-sort [jobs]
   (let [{:keys [key-fn comp-fn order prep-fn] :as spec} @db/job-sort]

@@ -31,16 +31,16 @@ aghire.sorting.sort_initialize = (function aghire$sorting$sort_initialize(){
 return cljs.core.reset_BANG_.call(null,aghire.db.job_sort,cljs.core.nth.call(null,aghire.sorting.job_sorts,(0)));
 });
 aghire.sorting.sort_bar_option = (function aghire$sorting$sort_bar_option(){
-return (function (p__22035){
-var map__22036 = p__22035;
-var map__22036__$1 = (((((!((map__22036 == null))))?(((((map__22036.cljs$lang$protocol_mask$partition0$ & (64))) || ((cljs.core.PROTOCOL_SENTINEL === map__22036.cljs$core$ISeq$))))?true:false):false))?cljs.core.apply.call(null,cljs.core.hash_map,map__22036):map__22036);
-var jsort = map__22036__$1;
-var title = cljs.core.get.call(null,map__22036__$1,new cljs.core.Keyword(null,"title","title",636505583));
+return (function (p__11144){
+var map__11145 = p__11144;
+var map__11145__$1 = (((((!((map__11145 == null))))?(((((map__11145.cljs$lang$protocol_mask$partition0$ & (64))) || ((cljs.core.PROTOCOL_SENTINEL === map__11145.cljs$core$ISeq$))))?true:false):false))?cljs.core.apply.call(null,cljs.core.hash_map,map__11145):map__11145);
+var jsort = map__11145__$1;
+var title = cljs.core.get.call(null,map__11145__$1,new cljs.core.Keyword(null,"title","title",636505583));
 var curr_sort = cljs.core.deref.call(null,aghire.db.job_sort);
 return new cljs.core.PersistentVector(null, 3, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.Keyword(null,"button.sortOption","button.sortOption",-1136341871),new cljs.core.PersistentArrayMap(null, 3, [new cljs.core.Keyword(null,"style","style",-496642736),new cljs.core.PersistentArrayMap(null, 1, [new cljs.core.Keyword(null,"color","color",1011675173),((cljs.core._EQ_.call(null,title,new cljs.core.Keyword(null,"title","title",636505583).cljs$core$IFn$_invoke$arity$1(curr_sort)))?"blue":"#222")], null),new cljs.core.Keyword(null,"selected","selected",574897764),cljs.core._EQ_.call(null,jsort,curr_sort),new cljs.core.Keyword(null,"on-click","on-click",1632826543),(function (){
 if(cljs.core._EQ_.call(null,title,new cljs.core.Keyword(null,"title","title",636505583).cljs$core$IFn$_invoke$arity$1(curr_sort))){
-return cljs.core.reset_BANG_.call(null,aghire.db.job_sort,cljs.core.update.call(null,curr_sort,new cljs.core.Keyword(null,"order","order",-1254677256),(function (p1__22034_SHARP_){
-return ((-1) * p1__22034_SHARP_);
+return cljs.core.reset_BANG_.call(null,aghire.db.job_sort,cljs.core.update.call(null,curr_sort,new cljs.core.Keyword(null,"order","order",-1254677256),(function (p1__11143_SHARP_){
+return ((-1) * p1__11143_SHARP_);
 })));
 } else {
 return cljs.core.reset_BANG_.call(null,aghire.db.job_sort,jsort);

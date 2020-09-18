@@ -116,10 +116,10 @@ return aghire.filtering.mk_filter_grid.call(null,"user","User selects",aghire.fi
  */
 aghire.filtering.mk_filter_grid = (function aghire$filtering$mk_filter_grid(key,lbl,j_major_selects,styling){
 var f_style = cljs.core.merge.call(null,aghire.utility.hz_flex_wrap,new cljs.core.PersistentArrayMap(null, 1, [new cljs.core.Keyword(null,"margin","margin",-995903681),"8px 0 8px 24px"], null),styling);
-var mk_filter_checkbox = (function (p__15443){
-var vec__15444 = p__15443;
-var tag = cljs.core.nth.call(null,vec__15444,(0),null);
-var desc = cljs.core.nth.call(null,vec__15444,(1),null);
+var mk_filter_checkbox = (function (p__17523){
+var vec__17524 = p__17523;
+var tag = cljs.core.nth.call(null,vec__17524,(0),null);
+var desc = cljs.core.nth.call(null,vec__17524,(1),null);
 var f_active = aghire.utility.app_cursor.call(null,new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.Keyword(null,"filter-active","filter-active",-410911794),tag], null));
 return new cljs.core.PersistentVector(null, 4, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.Keyword(null,"div","div",1057191632),new cljs.core.PersistentArrayMap(null, 1, [new cljs.core.Keyword(null,"style","style",-496642736),new cljs.core.PersistentArrayMap(null, 5, [new cljs.core.Keyword(null,"color","color",1011675173),"white",new cljs.core.Keyword(null,"min-width","min-width",1926193728),"96px",new cljs.core.Keyword(null,"display","display",242065432),"flex",new cljs.core.Keyword(null,"flex","flex",-1425124628),"",new cljs.core.Keyword(null,"align-items","align-items",-267946462),"center"], null)], null),new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.Keyword(null,"input","input",556931961),new cljs.core.PersistentArrayMap(null, 6, [new cljs.core.Keyword(null,"id","id",-1388402092),[cljs.core.str.cljs$core$IFn$_invoke$arity$1(tag),"ID"].join(''),new cljs.core.Keyword(null,"class","class",-2030961996),[cljs.core.str.cljs$core$IFn$_invoke$arity$1(tag),"-jSelect"].join(''),new cljs.core.Keyword(null,"style","style",-496642736),new cljs.core.PersistentArrayMap(null, 1, [new cljs.core.Keyword(null,"background","background",-863952629),"#eee"], null),new cljs.core.Keyword(null,"type","type",1174270348),"checkbox",new cljs.core.Keyword(null,"defaultValue","defaultValue",-586131910),false,new cljs.core.Keyword(null,"on-change","on-change",-732046149),(function (e){
 return cljs.core.reset_BANG_.call(null,f_active,e.target.checked);
