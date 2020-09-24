@@ -9,7 +9,7 @@ My Javascript/mxWeb&trade; ["AskHN: Who Is Hiring"](https://github.com/kennytilt
 
 Moving along...
 * If yer just lookin' for work, the JS version is [live here](https://kennytilton.github.io/whoishiring/) grace a GitHub. Or you can clone this and run it yourself. See below for a devops necessity.
-* If ya just want to see this CLJS [re-frame](https://github.com/day8/re-frame) version of run locally, jump down to "Run Application".
+* If ya just want to see this CLJS [reagent](https://github.com/reagent-project/reagent) version of run locally, jump down to "Run Application".
 * To be fully empowered such that you can scrape a new month's "Who's Hiring?" replies, jump down to "Grab HN Pages".
 
 ### Notable features
@@ -66,19 +66,19 @@ Now your copy of the app should work with any new content you specify in `index.
 
 ```
 lein clean
-lein figwheel dev
+lein fig:build
 ```
 
-Figwheel will automatically push cljs changes to the browser.
+Figwheel will do some work, then should take you automatically to [http://localhost:9500](http://localhost:9500).
 
-Wait a bit, then browse to [http://localhost:3449](http://localhost:3449).
+Figwheel will now push cljs changes to the browser.
+
 
 ## Production Build
-
 
 To compile clojurescript to javascript:
 
 ```
 lein clean
-lein cljsbuild once min
+lein fig:min
 ```
