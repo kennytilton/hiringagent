@@ -17,7 +17,7 @@
   (swap! db/search-history update-in [scope] utl/push-new raw))
 
 (defn- de-aliased [scope]
-  (when-let [rgx-raw (get @db/rgx-unparsed scope)]
+  (when-let [rgx-raw (not-empty (get @db/rgx-unparsed scope))]
     (if @db/rgx-xlate-or-and
       (str/replace (str/replace rgx-raw #"\sand\s" " && ") #"\sor\s" " || ")
       rgx-raw)))
