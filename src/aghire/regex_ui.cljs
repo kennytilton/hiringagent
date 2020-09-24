@@ -20,7 +20,6 @@
      [:label {:for "rgxMatchCase"}
       "match case"]]))
 
-
 (defn mk-rgx-or-and []
   (fn []
     [:div {:style {:color       "#fcfcfc"

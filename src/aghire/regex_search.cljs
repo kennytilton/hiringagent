@@ -18,12 +18,12 @@
 
 (defn- de-aliased [scope]
   (when-let [rgx-raw (get @db/rgx-unparsed scope)]
-      (if @db/rgx-xlate-or-and
-        (str/replace (str/replace rgx-raw #"\sand\s" " && ") #"\sor\s" " || ")
-        rgx-raw)))
+    (if @db/rgx-xlate-or-and
+      (str/replace (str/replace rgx-raw #"\sand\s" " && ") #"\sor\s" " || ")
+      rgx-raw)))
 
 (defn rgx-tree-build [scope]
-  (when-let [rgx-normal (<track de-aliased scope)]
+  (when-let [rgx-normal (not-empty (<track de-aliased scope))]
     (let [or-terms (str/split (js->clj rgx-normal) #"\|\|")]
       (into []
         (map (fn [or-term]

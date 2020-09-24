@@ -15,6 +15,7 @@
 
     (filter (fn [j]
               (let [memo (<app-cursor [:job-memos (:hn-id j)])]
+                (prn :hunh title-rgx-tree :full full-rgx-tree)
                 (and (or (not (get filters "REMOTE")) (:remote j))
                      (or (not (get filters "ONSITE")) (:onsite j))
                      (or (not (get filters "INTERNS")) (:intern j))
@@ -24,7 +25,7 @@
                      (or (not (get filters "Applied")) (:applied memo))
                      (or (not (get filters "Starred")) (pos? (:stars memo)))
                      (or (not title-rgx-tree) (rgx/rgx-tree-match (:title-search j) title-rgx-tree))
-                     #_ (or (not full-rgx-tree) (or
+                     (or (not full-rgx-tree) (or
                                                (rgx/rgx-tree-match (:title-search j) full-rgx-tree)
                                                (rgx/rgx-tree-match (:body-search j) full-rgx-tree))))))
       @loader/month-jobs)))
