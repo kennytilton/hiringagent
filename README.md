@@ -2,7 +2,7 @@
 
 Search and annotate the hundreds of jobs listed every month.
 
-My Javascript/mxWeb&trade; ["AskHN: Who Is Hiring"](https://github.com/kennytilton/whoshiring) browser ported to CLJS/[re-frame](https://github.com/Day8/re-frame), offered FWIW to `re-frame` noobs everywhere. A `re-frame` version is [here](https://github.com/kennytilton/rehiring) and a [Matrix](https://github.com/kennytilton/matrix) version is in progress.
+My Javascript/mxWeb&trade; ["AskHN: Who Is Hiring"](https://github.com/kennytilton/whoshiring) browser ported to CLJS/[reagent](https://github.com/reagent-project/reagent), offered FWIW to `reagent` noobs everywhere. A `re-frame` version is [here](https://github.com/kennytilton/rehiring) and a [Matrix](https://github.com/kennytilton/matrix) version is in progress.
 
 
 ![On the IPhone Sim](Iphone.png)
