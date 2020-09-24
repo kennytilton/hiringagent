@@ -9,42 +9,36 @@
     [aghire.month-loader :as loader]
     [aghire.memo :refer [<memo-cursor] :as unt]))
 
+(defn node-to-hiccup [n]
+  (case (.-nodeType n)
+    1 (case (.-tagName n)
+        "A" [:a {:href (.-href n)} (.-textContent n)] ;; s/b (into [:a href]...
+        "P" (into [:p] (map node-to-hiccup
+                         (array-seq (.-childNodes n))))
+        "DIV" (into [:div] (map node-to-hiccup
+                             (array-seq (.-childNodes n))))
+        [:p (str "Unexpected tag = " (.-tagName n))])
+    3 [:span (.-textContent n)]
+    [:p (str "Unexpected n type = " (.-nodeType n))]))
+
 (defn job-header []
   (fn [job]
     [:div {:style    {:cursor  "pointer"
                       :display "flex"}
-           :on-click #(swap! (app-cursor [:show-job-details (:hn-id job)]) not)
-           }
+           :on-click #(swap! (app-cursor [:show-job-details (:hn-id job)]) not)}
      [:span {:style {:color        "gray"
                      :max-height   "16px"
                      :margin-right "9px"
                      :display      "block"}}
       (utl/unesc "&#x2b51")]
      (into [:div ]
-       (map (fn [n]
-
-              (case (.-nodeType n)
-                1 (if (= "A" (.-tagName n))
-                    [:a {:href (.-href n)} (.-textContent n)]
-                    [:p (str "Unexpected tagname = " (.-tagName n))])
-                3 [:span (.-textContent n)]
-                [:p (str "Unexpected n type = " (.-nodeType n))]))
+       (map node-to-hiccup
          (:title-seg job)))]))
 
 (defn jump-to-hn [hn-id]
   (.open js/window (pp/cl-format nil "https://news.ycombinator.com/item?id=~a" hn-id) "_blank"))
 
-(defn node-to-hiccup [n]
-    (case (.-nodeType n)
-      1 (case (.-tagName n)
-          "A" [:a {:href (.-href n)} (.-textContent n)] ;; s/b (into [:a href]...
-          "P" (into [:p] (map node-to-hiccup
-                           (array-seq (.-childNodes n))))
-          "DIV" (into [:div] (map node-to-hiccup
-                             (array-seq (.-childNodes n))))
-          [:p (str "Unexpected tag = " (.-tagName n))])
-      3 [:span (.-textContent n)]
-      [:p (str "Unexpected n type = " (.-nodeType n))]))
+
 
 (defn job-details []
   (fn [job]

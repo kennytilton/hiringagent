@@ -1,12 +1,27 @@
 # Hiring (Re)agent
 
-My Javascript/mxWeb&trade; ["AskHN: Who Is Hiring"](https://github.com/kennytilton/whoshiring) browser ported to CLJS/[Reagent](https://github.com/reagent-project/reagent). Search and annotate the hundreds of jobs listed every month.
+Search and annotate the hundreds of jobs listed every month.
+
+My Javascript/mxWeb&trade; ["AskHN: Who Is Hiring"](https://github.com/kennytilton/whoshiring) browser ported to CLJS/[re-frame](https://github.com/Day8/re-frame), offered FWIW to `re-frame` noobs everywhere. A `re-frame` version is [here](https://github.com/kennytilton/rehiring) and a [Matrix](https://github.com/kennytilton/matrix) version is in progress.
+
 
 ![On the IPhone Sim](Iphone.png)
 
-If yer just lookin' for work, the JS version is [live here](https://kennytilton.github.io/whoishiring/) grace a GitHub. Or you can clone this and run it yourself. See below for a devops necessity.
+Moving along...
+* If yer just lookin' for work, the JS version is [live here](https://kennytilton.github.io/whoishiring/) grace a GitHub. Or you can clone this and run it yourself. See below for a devops necessity.
+* If ya just want to see this CLJS [re-frame](https://github.com/day8/re-frame) version of run locally, jump down to "Run Application".
+* To be fully empowered such that you can scrape a new month's "Who's Hiring?" replies, jump down to "Grab HN Pages".
 
-## Development Mode
+### Notable features
+
+#### The progress bar
+This was harder than anything. Reactive systems in general resist flowing change out of long-running batch processes such as parsing a big page of HTML. Clever Things(tm) had to be done to structure that work in a way that could fit neatly into the Reagent flow. One hack to note is flushing the DOM so the user actually gets to see something. (I am looking at you, Mac OS X installs.)
+
+#### Persistence
+Nothing crazy, but we do demonstrate using `reg-event-fx` to persist user annotations into local storage as they work.
+
+#### Lotsa interdependent widgets
+Other than that, just a lot of dynamic UI as the user varies inputs. Note especially that this is not just a browser: user can "star", hide, flag as applied, and record notes on different listings.
 
 ### Grab HN Pages
 The app runs off pages curl'ed straight from the HN server. So they get out of date (but see below for the script I created to run indefinitely at a specified interval to refresh them).
