@@ -35,4 +35,4 @@
 (def search-history (r/cursor app [:search-history]))
 (def show-job-details (r/cursor app [:show-job-details]))
 
-(def ls-key "rehiring-browser")                             ;; localstore key
+(def  ls-key "rehiring-browser")                             ;; localstore key

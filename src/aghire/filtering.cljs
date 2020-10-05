@@ -15,7 +15,6 @@
 
     (filter (fn [j]
               (let [memo (<app-cursor [:job-memos (:hn-id j)])]
-                (prn :hunh title-rgx-tree :full full-rgx-tree)
                 (and (or (not (get filters "REMOTE")) (:remote j))
                      (or (not (get filters "ONSITE")) (:onsite j))
                      (or (not (get filters "INTERNS")) (:intern j))

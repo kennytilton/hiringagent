@@ -38,8 +38,6 @@
 (defn jump-to-hn [hn-id]
   (.open js/window (pp/cl-format nil "https://news.ycombinator.com/item?id=~a" hn-id) "_blank"))
 
-
-
 (defn job-details []
   (fn [job]
     (let [deets (<app-cursor [:show-job-details (:hn-id job)])]
@@ -78,8 +76,7 @@
                   :background (if (zero? (mod job-no 2))
                                 "#eee" "#f8f8f8")}}
      [job-header job]
-     [job-details job]
-     ]))
+     [job-details job]]))
 
 (defn job-list []
   (fn []

@@ -1,7 +1,7 @@
 (ns ^:figwheel-hooks aghire.core
   (:require
     [goog.dom :as gdom]
-    [reagent.core :as r :refer [atom]]
+    [reagent.core :as r]
     [reagent.dom :as rdom]
 
     [aghire.utility :as utl]
@@ -20,7 +20,7 @@
 (defn multiply [a b] (* a b))
 
 ;; define your app data so that it doesn't get over-written on reload
-(defonce app-state (atom {:text "Hello world!"}))
+(defonce app-state (r/atom {:text "Hello world!"}))
 
 (defn get-app-element []
   (gdom/getElement "app"))
@@ -42,7 +42,7 @@
      "Graphic design by <a href='https://www.mloboscoart.com'>Michael Lobosco</a>."]))
 
 (defn app-banner []
-  (let [helping (atom false)]
+  (let [helping (r/atom false)]
     (fn []
       [:div {:style {:background "PAPAYAWHIP"}}
        [:header

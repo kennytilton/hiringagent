@@ -75,7 +75,6 @@
 
 ;;; --- reusable components -----
 
-
 (defn help-list [helpItems helping]
   (fn []
     [:div {:class    (str "help " (slide-in-anime @helping))

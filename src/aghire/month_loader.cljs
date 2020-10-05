@@ -70,7 +70,6 @@
 
 (defn month-progress-compute []
   (let [{:keys [phase page-url-count page-urls-remaining athings athing-parse-ct jobs]} (:month-load @db/app)]
-    ;;(prn :progcomp phase athing-parse-ct (count jobs))
     (into [(or phase :inactive)]
       (case phase
         :cull-athings [page-url-count (- page-url-count (count page-urls-remaining))]

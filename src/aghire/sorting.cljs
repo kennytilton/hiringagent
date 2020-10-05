@@ -34,10 +34,6 @@
                 {:title "Stars" :comp-fn job-stars-compare :order -1 :prep-fn job-stars-enrich}
                 {:title "Company" :key-fn job-company-key :order 1}])
 
-(defn sort-initialize []
-  (reset! db/job-sort (nth job-sorts 0)))
-
-
 ;;; --- job sort bar -------------------------------------------------------
 
 (defn sort-bar-option []
